@@ -37,7 +37,7 @@ public class GenderServiceImpl implements GenderService {
     }
 
     @Override
-    public GenderDTO getById(Integer genderId) {
+    public GenderDTO getGenderById(Integer genderId) {
         checkArgument(genderId > 0,
                 i18n.translate("argument.nonNegative", genderId));
         return Optional.ofNullable(genderRepo.findOne(genderId)).map(genderMapper::entityToDto)

@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,9 +33,9 @@ public class GenderController {
     }
 
     @GetMapping("/{genderId}")
-    public ResponseEntity<List<GenderDTO>> getGenderById() {
-        List<GenderDTO> genders = genderService.getAll();
-        return ResponseEntity.ok(genders);
+    public ResponseEntity<GenderDTO> getGenderById(
+            @PathVariable("genderId") Integer genderId) {
+        return ResponseEntity.ok(genderService.getGenderById(genderId));
     }
 
 }

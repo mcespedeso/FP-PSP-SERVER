@@ -8,6 +8,6 @@ public interface GenderService {
 
     List<GenderDTO> getAll();
 
-    GenderDTO getById(Integer genderId);
+    GenderDTO getGenderById(Integer genderId);
 
 }
