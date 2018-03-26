@@ -39,11 +39,8 @@ public class GenderEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @Column(name = "description_es")
-    private String descriptionEs;
-
-    @Column(name = "description_en")
-    private String descriptionEn;
+    @Column(name = "description_key")
+    private String descriptionKey;
 
     public Integer getId() {
         return id;
@@ -61,20 +58,12 @@ public class GenderEntity extends BaseEntity {
         this.gender = gender;
     }
 
-    public String getDescriptionEs() {
-        return descriptionEs;
+    public String getDescriptionKey() {
+        return descriptionKey;
     }
 
-    public void setDescriptionEs(String descriptionEs) {
-        this.descriptionEs = descriptionEs;
-    }
-
-    public String getDescriptionEn() {
-        return descriptionEn;
-    }
-
-    public void setDescriptionEn(String descriptionEn) {
-        this.descriptionEn = descriptionEn;
+    public void setDescriptionKey(String descriptionKey) {
+        this.descriptionKey = descriptionKey;
     }
 
     @Override
@@ -99,8 +88,7 @@ public class GenderEntity extends BaseEntity {
         return MoreObjects.toStringHelper(this)
                 .add("id", id)
                 .add("gender", gender)
-                .add("descriptionEs", descriptionEs)
-                .add("descriptionEn", descriptionEn)
+                .add("descriptionKey", descriptionKey)
                 .toString();
     }
 
