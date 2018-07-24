@@ -59,7 +59,8 @@ public class SnapshotControllerTest {
     @Test
     public void shouldGetAllSnapshotsBySurvey() throws Exception {
         List<Snapshot> snapshots = snapshotList();
-        when(service.find(eq(SURVEY_ID), anyLong())).thenReturn(snapshots);
+        when(service.getSnapshotsByFilters(eq(SURVEY_ID), anyLong(), anyLong(), anyLong(), anyLong()))
+                .thenReturn(snapshots);
 
         this.mockMvc.perform(get("/api/v1/snapshots").param("survey_id", SURVEY_ID.toString()))
                 .andDo(print())
